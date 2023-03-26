@@ -1,4 +1,4 @@
-export default class Invintory {
+export default class Inventory {
     constructor()
     {
         this.keys = [];
