@@ -1,8 +1,9 @@
 export default class SetPiece {
-    constructor(state, description, actions)
+    constructor(state, description, name, actions)
     {
         this.state = state;
         this.description = description;
+        this.name = name;
         this.actions = actions;
     }
 
