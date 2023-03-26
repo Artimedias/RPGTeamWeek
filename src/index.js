@@ -59,3 +59,4 @@ function main() {
   westButton.addEventListener("click", () => {Henry.move(4, roomArray)});
 
 }
+
