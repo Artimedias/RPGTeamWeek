@@ -1,3 +1,5 @@
+import Player from './js/player.js';
+import Invintory from './js/invintory.js';
 
-test 
->>>>>>> 470b112b78f3d65fee88f60af4191b8c6900a1ab
+let inv = new Invintory()
+let Henry = new Player("Henry", 1, [5, 5, 5, 25], inv)
