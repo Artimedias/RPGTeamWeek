@@ -7,8 +7,8 @@ export default class Room {
         this.setpiece = setpiece;
     }
 
-    description()
+    describe()
     {
-        //this will print out the rooms own description, as well as the description of any characters, items, or setpieces in the room
+        console.log(this.description);
     }
 }
