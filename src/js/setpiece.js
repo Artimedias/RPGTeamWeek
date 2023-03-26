@@ -14,6 +14,13 @@ export default class SetPiece {
 
     actions(item)
     {
+        /*
+        switch(id)
+
+        case 1: 
+
+
+        */
         //will call the code that we pass into it as actions, as a function
     }
 }
