@@ -1,9 +1,10 @@
 export default class Invintory {
-    constructor(name, location, stats, invintory)
+    constructor()
     {
-        this.name = name;
-        this.location = location;
-        this.stats = stats;
-        this.invintory = invintory;
+        this.keys = [];
+        this.tools = [];
+        this.objects = [];
+        this.food = [];
+        this.weapons = [];
     }
 }
