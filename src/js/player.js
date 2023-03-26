@@ -1,15 +1,26 @@
 export default class Player {
-    constructor(name, location, stats, invintory)
+    constructor(name, location, stats, inventory)
     {
         this.name = name;
         this.location = location;
         this.stats = stats;
-        this.invintory = invintory;
+        this.inventory = inventory;
     }
 
-    move(direction) {
+    move(direction, roomAt) {
         //this will check the room object if the direction that the player wishes to move is valid, and then will change the players location to that room
         //it then will tell the room object to run its describe method
+
+        //if the room at the location the player is in has a connector with the same direction as the direction we just passed here
+        for(let i = 0; i < roomAt[this.location].connection.length; i++)
+        {
+            if(roomAt[this.location].connection[i].direction === direction)
+            {
+                this.location = roomAt[this.location].connection[i].destination; 
+                roomAt[this.location].describe();
+            }
+        }
+        
     }
 
     inspect(target) {
