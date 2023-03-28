@@ -32,6 +32,10 @@ let roomOneChest = new SetPiece(0, ["There is a locked chest in the room", "Ther
     roomOneChest.state = 1;
     firstKey.describe();
 }
+  else
+  {
+    console.log(`your ${item} does nothing to the chest`)
+  }
 });
 
 
@@ -43,7 +47,8 @@ let roomTwo = new Room(2, "You are in a room with brown wallpaper. \n There is a
 //Pushing the rooms into the roomArray
 let setPieceArray = [roomOneChest];
 
-let inv = new Inventory([], [hand], [], [], [])
+let inv = new Inventory([], [], [], [], [])
+inv.tools.push(hand);
 let Henry = new Player("Henry", 1, [5, 5, 5, 25], inv)
 let roomArray = [Henry.inventory, roomOne, roomTwo];
 
@@ -78,7 +83,8 @@ function main() {
         const found = setPieceArray.find(element => element.name === targetInput.value);
         if(found)
         {
-        Henry.interact(itemInput.value, targetInput.value);
+        //const targetThing = setPieceArray.find(element => element.name === targetInput.value);
+        Henry.interact(itemInput.value, found);
         }
         else
         {
