@@ -69,6 +69,7 @@ function main() {
   southButton.addEventListener("click", () => {Henry.move(3, roomArray)});
   westButton.addEventListener("click", () => {Henry.move(4, roomArray)});
 
+
   interactButton.addEventListener("click", () => {
     const itemInput = document.createElement('input');
     const targetInput = document.createElement('input');
@@ -101,3 +102,4 @@ function main() {
 
 
 }
+
