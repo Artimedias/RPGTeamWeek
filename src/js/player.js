@@ -33,17 +33,21 @@ export default class Player {
         const itemKeys = Object.keys(this.inventory);
        for(let i = 0; i < itemKeys.length; i++)
        {
-        console.log(this.inventory)
             const found = this.inventory[itemKeys[i]].find(element => element.name === item);
             if(found)
             {
-                target.actions(item);
+                //const itemTarget = setPieceArray.find(element => element.name === targetInput.value);
+                target.actions(found);
             }
     }
-
-
 }
+    pickUp(item) {
+        switch (item.tag) {
+            case keys: 
+            item.location = 0
 
+        }
+    }
     attack(target) {
         //this will check the targeted object if its a character, and if it is a character, to turn it hostile and then do damage to it. 
     }
