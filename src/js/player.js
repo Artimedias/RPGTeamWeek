@@ -42,11 +42,34 @@ export default class Player {
     }
 }
     pickUp(item) {
+        item.location = 0
         switch (item.tag) {
             case keys: 
-            item.location = 0
-
+            this.inventory.keys.push(item)
+            break
         }
+        switch (item.tag) {
+            case tools: 
+
+            this.inventory.tools.push(item)
+            break
+        }
+        switch (item.tag) {
+            case objects: 
+            this.inventory.objects.push(item)
+            break
+        }
+        switch (item.tag) {
+            case food: 
+            this.inventory.food.push(item)
+            break
+        }
+        switch (item.tag) {
+            case weapons: 
+            this.inventory.weapons.push(item)
+            break
+        }
+        console.log(this.inventory)
     }
     attack(target) {
         //this will check the targeted object if its a character, and if it is a character, to turn it hostile and then do damage to it. 

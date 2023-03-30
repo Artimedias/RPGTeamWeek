@@ -9,8 +9,7 @@ export default class SetPiece {
 
     describe()
     {
-        //this will check the state, and then print out the description
-
+       console.log(this.description[this.state])
     }
 
     actions(item)
