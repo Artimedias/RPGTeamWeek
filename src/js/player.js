@@ -27,8 +27,26 @@ export default class Player {
         //this will tell the thing being inspected to run its describe method
     }
 
-    interact(target) {
-        //this will tell the targeted object to check its actions method to see if the item being used on it is a valid item and to run its action if it is
+    //toDO: add the checking if you actually have the item to another function, its kinda messy here ngl
+    interact(item, target) {
+
+        const itemKeys = Object.keys(this.inventory);
+       for(let i = 0; i < itemKeys.length; i++)
+       {
+            const found = this.inventory[itemKeys[i]].find(element => element.name === item);
+            if(found)
+            {
+                //const itemTarget = setPieceArray.find(element => element.name === targetInput.value);
+                target.actions(found);
+            }
+    }
+}
+    pickUp(item) {
+        switch (item.tag) {
+            case keys: 
+            item.location = 0
+
+        }
     }
     attack(target) {
         //this will check the targeted object if its a character, and if it is a character, to turn it hostile and then do damage to it. 
