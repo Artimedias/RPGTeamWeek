@@ -51,9 +51,7 @@ let setPieceArray = [roomOneChest];
 let inv = new Inventory([], [], [], [], [])
 inv.tools.push(hand);
 let Henry = new Player("Henry", 1, [5, 5, 5, 25], inv)
-<<<<<<< HEAD
->>>>>>> b45002e71f5dcea1da8225e1380562eddff48d5c
-=======
+
 let roomArray = [Henry.inventory, roomOne, roomTwo];
 
 
@@ -107,4 +105,3 @@ function main() {
 
 }
 
->>>>>>> b15d94731cc7ed2ac321cf82244f6200e846e912
