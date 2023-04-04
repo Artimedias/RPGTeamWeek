@@ -1,0 +1,103 @@
+Room 1: 
+
+Room one is just a dark room with a florencent light. Concerete flooring, Concerete walls, almost like a bunker I guess
+Setpiece is an unlocked chest. opening the unlocked chest gives the player a key.
+This key can be used to unlock the door in the room that leads to room 2\
+
+Room 2:
+
+Room 2 is a big ole office building floor. lets say its got some rows of desks and computers, but for things to actually interact with theres just going to be a 
+flash drive item to pick up, and a computer setpiece object. using the flashdrive on the computer just tells you youre an idiot for putting an unknown flash drive
+into a computer. This does not destroy the flashdrive.
+
+instead, inspecting the computer will give a code that will be used later.
+
+It connects to room 3 northwards, and room four westwards
+
+Room 3: 
+
+Room 3 looks like a small cabin. The windows are barricaded, and theres a violent snowstorm outside. Inside of the room is a bunny mask item which will be used later.
+The rooms setpiece is a closet with a rusty lock. Once the player gets a hammer, they'll be able to just smash open the lock, revealing another pathway inside 
+of it. 
+
+Room 4: 
+
+Room 4 is a dusty old bar, with some flickering neon lights and aging 80s decor. Theres a classic jukebox in the corner, looking even more out of date than the 
+rest of the place. We'll have some sort of riddle involving music here, not sure what it could be though. If the player inspects the bar itself, they'll be 
+able to find a bottle of whiskey. After solving the riddle, a door to the east creaks open
+
+Room 5:
+
+Room 5 is an utter mess, looking like an unclean childs room. Toys are scattered everywhere, and a bunch of open drawers are all leaning out of a organizer,
+all labled for various things. If the user uses their hand on the mess, they can clean it up, revealing a shiny blue key undeneath all of it. Theres a path 
+to the north and the east.
+
+Room 6:
+
+Room 6 is a banquet hall. Theres a delicous feast where the food always seems to move just out of reach if you try to grab it, and a table with 3 glasses.
+One is labled wine, the other is labled beer, and the third one is empty. By pouring the whiskey into the glass, all three of them will drain away, and a pair 
+of sunglasses will be dropped on the table, along with some ballroom music beginning to play, and two grand doors to the east opening. 
+
+Room 7: 
+
+Room 7 opens into a massive forest. The code on the terminal back in room 2 is the order of directions that the player needs to follow in order to reach the end  
+of the trail, as theres lots of winding loopbacks and wrong ends that will just spit the user back out various rooms. Assuming they do reach the end, they'll
+find an unfinished cabin with the same description as the one in room 3, but with an axe, a hammer, and a file item.
+
+Room 8: 
+
+Room 8 is a gas station, but almost everything is locked behind metal bars covering off the goods. The bars on the electronics section look a bit rusty though.
+If the player has the file, they can use it on the bars to cut it open, getting a flashlight.
+
+Room 9: 
+
+Room 9 is an extremely long school hallway with lockers lining the sides. The sounds of teenagers chatting fills the air, but theres none to be seen. A 
+backpack item is tossed off to the side, with nothing inside. A fire exstinguisher is encased in glass, and can be grabbed if the player uses the hammer on the
+glass
+
+Room 10: 
+
+Room 10 is an achient temple. Inside there are three large statues, one a fox, one a cat, and one a bunny. By leaving the masks at each of the statues, they'll 
+start glowing. Once all three are glowing, the door leading north opens. However, the path is too bright to walk down, unless you have the sunglasses
+
+Room 11:
+
+Room 11 is a room thats pitch black. its actually just a path along a cliffside, but if the player walks north or east while inside the room, they'll fall down
+and stumble back into room 1. If the player does not have the flashlight item, the text describing the room will all be highlighted black, making it impossible 
+to read.
+
+Room 12: 
+
+Room 12 is a room with seemingly no exit. There is nothing but a table and a mirror. By inspecting the mirror, the player sees what they saw, giving them a saw.
+By using the saw on the table, they get half a table, and the table becomes a half table. By using half a table on the other half of the table, they make a whole
+Once they make the hole they can enter it in order to return to room 10, granting them the fox mask.
+
+Room 13: 
+
+Room 13 is a room with a giant chessboard inside of it. On the chessboard 
+
+There is a black king on E8
+There is a black Queen on A1
+
+There is a white king on D6
+There is a white knight on E6
+There is a white rook on H7
+
+Any move other than rook to E7 will result in a fail. A pass opens up the door to the next room.
+
+Room 14:
+
+Room 14 is a room with a computer screen that reads "Do you remember what you were told? Do the opposite". However, the computer is locked behind a 
+wall of fire, and a cage
+
+Inserting the flash drive into the computer will reward the player with an image of the cat mask. On the computer screen. By interacting with the screen, they
+are able to physically pull it out of the computer, rewarding them with the last mask.
+
+Room 15:
+
+Room 15 is a peaceful garden with an open gate. In the way is an angry man wearing a uniform that is unreconizable. The man yells at them to get back in their 
+cell. The player is given once chance- any action besides using the axe on the man will result in being sent back to room 1. If the player does use the axe, the
+man falls, and the player escapes. 
+
+
+
