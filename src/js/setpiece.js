@@ -1,18 +1,20 @@
 export default class SetPiece {
-  constructor(state, description, name, actions)
+  constructor(location, state, description, name, actions)
   {
+    this.location = location
     this.state = state;
     this.description = description;
     this.name = name;
     this.actions = actions;
   }
 
-  describe()
+  describe(textBox)
   {
     console.log(this.description[this.state]);
+    textBox.innerText += this.description[this.state];
   }
 
-  actions(item)
+  actions(item, textBox)
   {
     /*
         switch(id)
