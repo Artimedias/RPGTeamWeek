@@ -7,7 +7,7 @@ export default class Player {
     this.inventory = inventory;
   }
 
-  move(direction, roomAt, textBox) {
+  move(direction, roomAt, textBox, itemArray) {
     let succsess = false;
     //this will check the room object if the direction that the player wishes to move is valid, and then will change the players location to that room
     //it then will tell the room object to run its describe method
@@ -19,7 +19,7 @@ export default class Player {
       {
         this.location = roomAt[this.location].connection[i].destination; 
         console.log(this.location);
-        roomAt[this.location].describe(textBox);
+        roomAt[this.location].describe(textBox, itemArray);
         succsess = true;
       }
     }
@@ -67,6 +67,7 @@ export default class Player {
       this.inventory.weapons.push(item);
       break;
     }
+
   }
   attack(target) {
     //this will check the targeted object if its a character, and if it is a character, to turn it hostile and then do damage to it. 

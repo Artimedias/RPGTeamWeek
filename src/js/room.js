@@ -7,7 +7,7 @@ export default class Room {
     this.setpiece = [];
   }
 
-  describe(textBox)
+  describe(textBox, itemArray)
   {
     console.log(this.description);
     textBox.innerText += this.description;
@@ -15,8 +15,11 @@ export default class Room {
     this.setpiece.forEach(element => {
       element.describe(textBox);
     });
-    /*items.forEach(element => {
-            element.describe();
-        });*/
+    itemArray.forEach(element => {
+      if(element.location === this.location)
+      {
+        element.describe(textBox);
+      }
+        });
   }
 }
