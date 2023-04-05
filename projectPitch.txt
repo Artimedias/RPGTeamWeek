@@ -1,0 +1,64 @@
+There will be one main object, the world object. Everything else will be a child of this object.
+
+Below the world object is the player object, room objects, character objects, and item objects.
+
+The player object will have a location property, a stats property, and an invintory object. 
+
+The location property is how the game knows where the player is. Its just an array, with room 1 being the first room, and so on.
+The stats property is how the game stores things such as HP, strength, and so on. Its just an array of numbers.
+The invintory object is a list of various arrays that each store item objects within them. This is to keep things organized and easy to read for the player.
+
+The room object will have a location property, a connection property, a description property, and setpiece objects
+
+Unlike for player objects, the location property for room objects is just its location within the array of rooms, used by other things to know where they are.
+The connection property is an array of connection objects. Connection objects are just a room number and a direction, and are used when the player clicks one of the move arrows. 
+The description property is just a string that describes the room that the player is in. When called, it will also add the description of any items or setpieces in that room.
+Setpiece objects are things that the player can interact with using the inspect or use command. They are highlighted in Orange when being described so the player knows that they can be interacted with.
+
+Setpiece objects have a state property, actions, and a description property. They are highlighted orange when mentioned in text, and are used when there is something that the player can interact with, but can not act itself, or be picked up by the player. 
+
+The state property is used to keep track of what description to use when the room object calls for the setpiece's description. For example, a chest might have a state of 0 and 1, where 0 is it being closed, and 1 is it being open.
+Actions are bits of code that are used when the setpieces state changes. For example a lever that has changed from state 0 to 1 might add another connection object to the room object, representing a passage opening.
+Unlike room objects, setpiece objects have an array of strings as their description, and the one that is used depends on the state of the setpiece
+
+Character objects have a state property, a description property, actions, location property and a stats property. They are highlighted in green, unless they are in combat with the player, in which case they are in red.
+
+The state property is used the same way as its used for setpiece objects.
+The description property is used the same way that it is used for setpiece objects.
+Actions are used the same way they are used for setpiece objects.
+The location property is used to keep track of where the character is.
+The stats property is used the same way its used for player objects.
+
+Item objects have a location property, a tag, and a description. They are used for anything the player can pick up and carry with them. They are highlighted in blue when mentioned.
+
+The location property is used to keep track of where the item is. Unique to items is the fact that they can go to location 0, representing the players invintory.
+The tag property is used to detirmine what type of item it is. Food items are used to heal, keys are used to open locks, objects are used to interact with setpieces, tools can be used as weapons or used to interact with setpieces, and weapons are used for combat, adding to the users strength. 
+Food, Key, and object items are destroyed on succsessful use, as they will only ever be used for one thing. Tools and weapons are not.
+
+
+========
+
+Please do not name varibles with the letter q, my q key is broken and that just makes life hard. Also avoid 9s
+
+========
+
+
+And exmaple of gameplay:
+
+The player enters a room. The room calls the "printDescripton" method, which prints out the descripton of the room. It then prints out the description of any setpieces in the room, checking for their state first. It them runs through the array of item and character objects, seeing if any of them are located in that room. If they are, it prints out their descriptions as well.
+
+This room has a taco item in it, and a chest setpiece. 
+
+The player uses the interact command with the taco, changing its location to 0, therefore adding it to their invintory. 
+
+The player then uses the use command, selecting their hammer and the chest. The chest runs its actions method, seeing if the hammer is a valid object to use on the chest. It doesnt match any of the items that can be used on that chest, so a fail message is sent.
+
+The player then uses the use command, selecting their old key and the chest. The chest runs its actions method, seeing if the key is a valid object to use on the chest. It is, and the action then changes the state of the chest, moves an item from room 88 to whatever room the chest is in, and moves the key to room 88.
+
+As an action took place, the printDescription method is called again, now printing out the descripton of the chest as being opened, since its state has changed, and adding the new objects descripton to the room to represent it being within the chest. note that the description of the taco will be gone now, as the player has picked it up. If they want to see that descripton again, they can use the inspect command, and then enter the name of the item, since the inspect command can always be used on items within the players object. 
+
+
+
+
+
+
