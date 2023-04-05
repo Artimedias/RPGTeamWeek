@@ -7,15 +7,17 @@ export default class Item {
     this.location = location;
   }
 
-  describe()
+  describe(textBox)
   {
     if(this.location != 0)
     {
       console.log(this.description[0]);
+      textBox.innerText += this.description[0];
     }
     else
     {
       console.log(this.description[1]);
+      textBox.innerText += this.description[1];
     }
   }
 }

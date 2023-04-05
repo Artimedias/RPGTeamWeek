@@ -7,12 +7,13 @@ export default class SetPiece {
     this.actions = actions;
   }
 
-  describe()
+  describe(textBox)
   {
     console.log(this.description[this.state]);
+    textBox.innerText += this.description[this.state];
   }
 
-  actions(item)
+  actions(item, textBox)
   {
     /*
         switch(id)

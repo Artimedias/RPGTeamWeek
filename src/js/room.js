@@ -7,12 +7,13 @@ export default class Room {
     this.setpiece = [];
   }
 
-  describe()
+  describe(textBox)
   {
     console.log(this.description);
+    textBox.innerText += this.description;
 
     this.setpiece.forEach(element => {
-      element.describe();
+      element.describe(textBox);
     });
     /*items.forEach(element => {
             element.describe();
