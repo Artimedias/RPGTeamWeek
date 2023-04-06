@@ -10,6 +10,7 @@ export default class Room {
   describe(textBox, itemArray)
   {
     console.log(this.description);
+    textBox.innerText += "\n ==================== \n";
     textBox.innerText += this.description;
 
     this.setpiece.forEach(element => {
@@ -20,6 +21,7 @@ export default class Room {
       {
         element.describe(textBox);
       }
-        });
+    });
+    textBox.innerText += "\n\n ==================== \n";
   }
 }

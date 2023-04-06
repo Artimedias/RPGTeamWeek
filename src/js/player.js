@@ -25,15 +25,10 @@ export default class Player {
     }
     if(succsess === false);
     {
-      console.log("You can't go that way")
+      console.log("You can't go that way");
     }
   }
 
-  inspect(target) {
-    //this will tell the thing being inspected to run its describe method
-  }
-
-  //toDO: add the checking if you actually have the item to another function, its kinda messy here ngl
   interact(item, target, textBox) {
 
     const itemKeys = Object.keys(this.inventory);
@@ -68,8 +63,5 @@ export default class Player {
       break;
     }
 
-  }
-  attack(target) {
-    //this will check the targeted object if its a character, and if it is a character, to turn it hostile and then do damage to it. 
   }
 }

@@ -2,7 +2,6 @@
 import Player from './js/player.js';
 import Inventory from './js/inventory.js';
 import SetPiece from './js/setpiece.js';
-import Character from './js/character.js';
 import Room from './js/room.js';
 import Connector from './js/connector.js';
 import Item from './js/item.js';
@@ -126,10 +125,10 @@ let bunnymask = new Item("Bunnymask", ["\n There is a bunny mask on the table", 
 let bluekey = new Item("Blue key", ["\n A shiny blue key lies on the carpeted floor", "\n The key glints a shiny blue off it's metallic surface."], "keys", 88);
 let file = new Item("File", ["\n You see a file sitting on the floor of the cabin", "\n A file used to shave or remove metal."], "objects", 22);
 let sunglasses = new Item("Sunglasses", ["\n A pair of sunglasses drop from above onto the table in front of you.",
-"\n A very cool looking and stylish pair of sunglasses"], "objects", 88);
+  "\n A very cool looking and stylish pair of sunglasses"], "objects", 88);
 let flashlight = new Item("Flashlight", ["\n Behind the bars in the electronics case is a flashlight.", "\n The flashlight is new with what appears to be full batteries."], "tools", 88);
 let fireextinguisher = new Item("Fire extinguisher", ["\n The fire extinguisher rolls slowly on the ground.",
-"\n The extinguisher is heavy and cumbersome, obviously made to last."], "tools", 88);
+  "\n The extinguisher is heavy and cumbersome, obviously made to last."], "tools", 88);
 let foxmask = new Item("Foxmask", ["\n There is now a fox mask in you inventory.", "\n The mask just like the bunny mask is adorable yet creepy."], "objects", 88);
 let catmask = new Item("Catmask", ["\n There is an image of a cat mask on the computer screen", "\n The cat mask is beautiful and ornate."], "objects", 88);
 let saw = new Item("Saw", ["\n A saw lays against the concrete floor", "\n A garden saw"], "tools", 88);
@@ -190,6 +189,10 @@ let roomThreeCloset = new SetPiece(3, 0, ["\n There is a closet locked with a ru
     roomThreeCloset.describe(textBox);
     roomThreeCons.push(C3W); 
   }
+  else if(item.tag === "keys")
+  {
+    textBox.innerText += "\n You attempt to unlock the lock with your key, but it's too banged up to even manage to get a key in there";   
+  }
   else
   {
     textBox.innerText += `\n your ${item.name} does nothing to the closet`;
@@ -230,21 +233,21 @@ let roomFourJukebox = new SetPiece(4,0, ["\n There is a jukebox in the bar, sile
       document.body.removeChild(doorButton);
       document.body.removeChild(africaButton);
       document.body.removeChild(thunderButton);
-    })
+    });
     africaButton.addEventListener("click", () => {
       roomFourJukebox.state = 2;
       roomFourJukebox.describe(textBox);
       document.body.removeChild(doorButton);
       document.body.removeChild(africaButton);
       document.body.removeChild(thunderButton);
-    })
+    });
     thunderButton.addEventListener("click", () => {
       roomFourJukebox.state = 3;
       roomFourJukebox.describe(textBox);
       document.body.removeChild(doorButton);
       document.body.removeChild(africaButton);
       document.body.removeChild(thunderButton);
-    })
+    });
   }
   else
   {
@@ -323,7 +326,7 @@ let roomTenFox = new SetPiece(10, 0, ["\n The Fox Statue towers over you, its ey
     if(roomTenBunny.state === 1 && roomTenCat.state === 1)
     {
       textBox.innerText += "\n With all three statues pleased, a hidden door to the north reveals itself";
-      roomTenCons.push(C10N)
+      roomTenCons.push(C10N);
     }
   }
   else
@@ -342,7 +345,7 @@ let roomTenCat = new SetPiece(10, 0, ["\n The Cat Statue looms above you, its ey
     if(roomTenBunny.state === 1 && roomTenFox.state === 1)
     {
       textBox.innerText += "\n With all three statues pleased, a hidden door to the north reveals itself";
-      roomTenCons.push(C10N)
+      roomTenCons.push(C10N);
     }
   }
   else
@@ -361,7 +364,7 @@ let roomTenBunny = new SetPiece(10, 0, ["\n The Rabbit Statue towers over you, i
     if(roomTenFox.state === 1 && roomTenCat.state === 1)
     {
       textBox.innerText += "\n With all three statues pleased, a hidden door to the north reveals itself";
-      roomTenCons.push(C10N)
+      roomTenCons.push(C10N);
     }
   }
   else
@@ -377,20 +380,20 @@ let roomElevenDarkness = new SetPiece(11, 0, ["\n ■■■■■■■■■■
     roomElevenDarkness.describe(textBox);
   }
   
-})
+});
 
 let roomTwelveTable = new SetPiece(12, 0, ["A fairly normal looking square oak table, save its location in this ominous void.", "Half of a table rests in the room, somehow upright", "A hole is within the room!"], "table", (item, textBox) => {
   if (item.name === "Saw" && roomTwelveTable.state === 0) {
     roomTwelveTable.state = 1;
-    textBox.innerText += "\n You saw in half the table, and take half of it for yourself"
+    textBox.innerText += "\n You saw in half the table, and take half of it for yourself";
     tablehalf.location = 12;
     tablehalf.describe(textBox);
   }
   else if (item.name === "Half of a table" && roomTwelveTable.state === 1) {
     roomTwelveTable.state = 2;
-    textBox.innerText += "\n You put the two halves back together, making it whole. You then jump in the hole to escape!"
+    textBox.innerText += "\n You put the two halves back together, making it whole. You then jump in the hole to escape!";
     Henry.location = 10;
-    textBox.innerText += "\n For your cleverness in solving this riddle, you have been awarded the fox mask"
+    textBox.innerText += "\n For your cleverness in solving this riddle, you have been awarded the fox mask";
     Henry.pickUp(foxmask, textBox);
     roomTen.describe(textBox, itemArray);
   }
@@ -398,12 +401,12 @@ let roomTwelveTable = new SetPiece(12, 0, ["A fairly normal looking square oak t
   {
     textBox.innerText += `\n your ${item.name} does nothing to the mirror`;
   }
-})
+});
 
 let roomTwelveMirror = new SetPiece(12, 0, ["\n A standard oval head height mirror, other than the invisible wall of nothing it hangs from.", "\n A shattered mirror is in the room."], "mirror", (item, textBox) => {
   if (item.name === "Hand" && roomTwelveMirror.state === 0) {
     roomTwelveMirror.state = 1;
-    textBox.innerText += "\nAs you look in the mirror, you see what you saw. \nSeeing the saw, you reach inside and pull it out. \nThe mirror shatters and the shards fall to the floor of nothing beneath you."
+    textBox.innerText += "\nAs you look in the mirror, you see what you saw. \nSeeing the saw, you reach inside and pull it out. \nThe mirror shatters and the shards fall to the floor of nothing beneath you.";
     saw.location = 12;
     saw.describe(textBox);
   }
@@ -411,7 +414,7 @@ let roomTwelveMirror = new SetPiece(12, 0, ["\n A standard oval head height mirr
   {
     textBox.innerText += `\n your ${item.name} does nothing to the mirror`;
   }
-})
+});
 
 /*let roomThirteenChessboard = new SetPiece(0, ["\n The white pieces await your command", "\n The black king lies slain, and a door to the east has been opened"], "chessboard", (item, textBox) => {
   if(item.name === "Hand")
@@ -476,20 +479,20 @@ let roomFourteenComputer = new SetPiece(14, 0, ["\n The desktop computer only di
   else {
     textBox.innerText += `\n your ${item.name} does nothing to the strange computer`;
   }
-})
+});
 
 let roomFifteenGunman = new SetPiece(15, 0, ["\n A man dressed in a security guard uniform stands with a gun drawn on you, ready to fire.", "\n The man lies dead on the floor, cut down in your act of defense."], "Gunman", (item, textBox) => {
   if (item.name === "Axe" && roomFifteenGunman.state === 0) {
     roomFifteenGunman.state = 1;
     textBox.innerText += "\n You charge him axe in hand, causing his first shot to miss and hit the doorframe behind you. \nYou close the distance and cut across his chest with the improvised weapon before he can fire a second time.";
     roomFifteenCons.push(C15N);
-    textBox.innerText += "\n There is nothing standing in your way to prevent your escape"
+    textBox.innerText += "\n There is nothing standing in your way to prevent your escape";
   }
   else
   {
     textBox.innerText += `\n your ${item.name} won't save you here`;
   }
-})
+});
 
 
 //Defining rooms
@@ -508,13 +511,13 @@ const roomTwelve = new Room(12, "\n As you pass across into the next room, you f
 const roomThirteen = new Room(13, "\n Once you enter the next room you find yourself facing a huge chessboard that covers the entire floor. You see four pieces on the chessboard: a black king on the eighth rank and the fifth file \n A black queen on the first rank and the fourth file and a white knight on the sixth rank and fifth file. \n There is a rook on the seventh rank and eighth file but it is not on the board. The rook hangs from a rope above the board with a sign that says Move Me. \n You realize this is a chess puzzle and you have to find the only move that will checkmate the black king to open the door to the next room.  \n There is a path to the North and to the West", roomThirteenCons);
 const roomFourteen = new Room(14, "\n This room is dimly lit with a single computer screen on a desk.\n There is a path to the South and a path to the North", roomFourteenCons);
 const roomFifteen = new Room(15, "\n Tthe next room it seems to be a paradise with a lush garden. \nA wooden gate appears to be the only path forward but in front of it is a maniacal man in a weird uniform holding a gun. \n The man snarls at you to get back in your prison or he will blow your brains out. \n There is a path to the South and a path to the North", roomFifteenCons);
-const roomSixteen = new Room(16, "\n You take the gate and walk forward, back to the normal world. \n\n\n\n You win!")
-const roomSeventeen = new Room(17, "\n You find yourself still in the forest, upon a clearing with a large boulder in the center.\n Now much deeper into the forest, you feel concerned,\n as if going the wrong direction could leave you lost forever", roomSeventeenCons)
-const roomEighteen = new Room(18, "\n You come upon a small pond deep within the woods, sourced from a stream to the North, dotted by lily pads and cattails.", roomEighteenCons)
-const roomNineteen = new Room(19, "\n The forest continues, the stream flowing from West to South crossing your way.", roomNineteenCons)
-const roomTwenty = new Room(20, "\n The stream's source is a small spring within a rocky outcropping between three large trees, the only natrual path to the West past the headwaters.", roomTwentyCons)
-const roomTwentyOne = new Room(21, "\n The forest continues unabated, its rows of towering pines obscuring any attempts to view far into the distance.", roomTwentyOneCons)
-const roomTwentyTwo = new Room(22, "\n After what felt like endless trees and shrubs, you happen upon a small wooden cabin within the heart of the forest, lit from within.", roomTwentyTwoCons)
+const roomSixteen = new Room(16, "\n You take the gate and walk forward, back to the normal world. \n\n\n\n You win!");
+const roomSeventeen = new Room(17, "\n You find yourself still in the forest, upon a clearing with a large boulder in the center.\n Now much deeper into the forest, you feel concerned,\n as if going the wrong direction could leave you lost forever", roomSeventeenCons);
+const roomEighteen = new Room(18, "\n You come upon a small pond deep within the woods, sourced from a stream to the North, dotted by lily pads and cattails.", roomEighteenCons);
+const roomNineteen = new Room(19, "\n The forest continues, the stream flowing from West to South crossing your way.", roomNineteenCons);
+const roomTwenty = new Room(20, "\n The stream's source is a small spring within a rocky outcropping between three large trees, the only natrual path to the West past the headwaters.", roomTwentyCons);
+const roomTwentyOne = new Room(21, "\n The forest continues unabated, its rows of towering pines obscuring any attempts to view far into the distance.", roomTwentyOneCons);
+const roomTwentyTwo = new Room(22, "\n After what felt like endless trees and shrubs, you happen upon a small wooden cabin within the heart of the forest, lit from within.", roomTwentyTwoCons);
 
 
 
@@ -565,14 +568,16 @@ function main() {
   const inventoryButton = document.getElementById("inventory");
   const inspectButton = document.getElementById("inspect");
 
-  northButton.addEventListener("click", () => {console.log("we moving now"); Henry.move(1, roomArray, textBox, itemArray);});
-  eastButton.addEventListener("click", () => {Henry.move(2, roomArray, textBox, itemArray);});
-  southButton.addEventListener("click", () => {Henry.move(3, roomArray, textBox, itemArray);});
-  westButton.addEventListener("click", () => {Henry.move(4, roomArray, textBox, itemArray);});
-
-  const itemInput = document.getElementById('item-select')
+  const itemInput = document.getElementById('item-select');
   const targetInput = document.getElementById('target-select');
   const inspectInput = document.getElementById("inspect-select");
+
+  northButton.addEventListener("click", () => {itemInput.style.visibility = "hidden"; targetInput.style.visibility = "hidden"; inspectInput.style.visibility = "hidden"; Henry.move(1, roomArray, textBox, itemArray);});
+  eastButton.addEventListener("click", () => {itemInput.style.visibility = "hidden"; targetInput.style.visibility = "hidden"; inspectInput.style.visibility = "hidden"; Henry.move(2, roomArray, textBox, itemArray);});
+  southButton.addEventListener("click", () => {itemInput.style.visibility = "hidden"; targetInput.style.visibility = "hidden"; inspectInput.style.visibility = "hidden"; Henry.move(3, roomArray, textBox, itemArray);});
+  westButton.addEventListener("click", () => {itemInput.style.visibility = "hidden"; targetInput.style.visibility = "hidden"; inspectInput.style.visibility = "hidden"; Henry.move(4, roomArray, textBox, itemArray);});
+
+
 
   interactButton.addEventListener("click", () => {
     childRemover(itemInput);
@@ -699,12 +704,12 @@ function main() {
       }
       childRemover(inspectInput);
       inspectInput.style.visibility = "hidden";
-      confirmButton.removeEventListener("click", Ralph)
+      confirmButton.removeEventListener("click", Ralph);
     });
   });
 
   inventoryButton.addEventListener("click", () => {
-    textBox.innerText += "\n You are currently in posession of: \n"
+    textBox.innerText += "\n You are currently in posession of: \n";
     for(let i=0; i<itemArray.length; i++)
     {
       if(itemArray[i].location === 0)
@@ -712,7 +717,7 @@ function main() {
         textBox.innerText += "\n " + itemArray[i].name;
       }
     }
-  })
+  });
 
   function childRemover(list) {
     while (list.hasChildNodes()) {
